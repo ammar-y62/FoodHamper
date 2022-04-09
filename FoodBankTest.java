@@ -1,4 +1,13 @@
 // ENSF 409 Final project - Group 62
+package edu.ucalgary.ensf409;
+
+import org.junit.Test;
+import org.junit.Assert;
+import static org.junit.Assert.*;
+
+import java.beans.Transient;
+
+public class FoodBankTest {
 private final int CLIENTID = 4;
 private final String[] TEST_MEMBERS = {
                 "Michie, adult female, Gender: Female",
@@ -28,3 +37,4 @@ private final DailyNeeds NEEDS = new DailyNeeds(29, 17, 34, 11);
         String actual = members.getAdultMale();
         assertEquals("Age did not match what was expected", givenData, actual);
         }    
+  
