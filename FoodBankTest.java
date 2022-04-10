@@ -37,6 +37,38 @@ public class FoodBankTest {
       String actual = members.getAdultMale();
       assertEquals("Age did not match what was expected", givenData, actual);
     }
+  
+  @Test
+    public void testViewItems(){
+        String givenData = TEST_INVENTORY;
+        Inventory inventory = new Inventory();
+        inventory.setItems(givenData);
+        String actual = inventory.viewItems();
+        assertEquals("Inventory did not match what was expected", givenData, actual);
+        assertTrue("Inventory is empty.", inventory.viewItems().isEmpty());
+    }     
+
+    @Test
+    public void testRemoveItems(){
+        String[] removed = new String[TEST_INVENTORY.length - 1];
+        int index = 1;
+
+        for (int i = 0, j = 0; i < TEST_INVENTORY.length; i++){
+            if (i == index){
+                continue;
+            }
+
+            removed[j++] = TEST_INVENTORY[i];
+        }
+
+        String givenData = TEST_INVENTORY;
+        Inventory inventory = new Inventory();
+        inventory.setItems(givenData);
+
+        // removeItems returns new inventory
+        String actual = inventory.removeItems(TEST_INVENTORY[0]);
+        assertEquals("Inventory did not remove correct item", removed, actual);
+    }
 }
 
    
