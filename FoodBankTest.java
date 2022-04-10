@@ -71,4 +71,33 @@ public class FoodBankTest {
     }
 }
 
+@Test
+    public void testPrintOrderNum(){
+        int orderNum = 3;
+
+        // member implements order form
+        Members member = new Members();
+
+        // sets count as orderNum (because every new order
+        // increases the count)
+        members.count(orderNum);
+
+        // count = orderNum
+        int actual = members.printOrderNum();
+        assertEquals("Did not print expected order number", orderNum, actual);
+    }
+
+    @Test 
+    public void testPrintMembers(){
+        Members member = new Members();
+        String[] print = member.printMembers(TEST_MEMBERS);
+        assertNotNull("No members are being print.", print);
+    }
+
+    @Test 
+    public void testPrintHamper(){
+        Members member = new Members();
+        String[] print = member.printHamper(TEST_HAMPER);
+        assertNotNull("No order is being print.", print);
+    }
    
