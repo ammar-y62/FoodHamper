@@ -375,5 +375,105 @@ public class FoodBankTest {
         gui.setAdFem(incorrectInput);
         assertFalse("Method did not catch error and return false.", gui.validateInput());
     }
+    
+    // tests for inventory
+    // test setters and getters of inventory
+    @Test
+    public void testSetGetInvenInventory(){
+        ArrayList <Foods> list = new ArrayList<Foods>();
+        Inventory invent = new Inventory();
+        Foods item1 = new Foods(23, "Raisin Bran", 50, 20, 20, 10, 160);
+        Foods item2 = new Foods(56, "Granola Bar", 65, 25, 5, 5, 120);
+        Foods item3 = new Foods(72, "Canned Soup", 20, 50, 25, 5, 240);
+        list.add(item1);
+        list.add(item2);
+        list.add(item3);
+        ArrayList <Foods> actual = new ArrayList<Foods>();
+        invent.setInven(list);
+        actual = invent.getInven();
+        ArrayList <Foods> expected = list;
+        assertEquals("Inventory did not set correct food items.", expected, actual);
+    }
+
+    //test getter for specific item in inventory
+    @Test
+    public void testGetItemInventory(){
+        ArrayList <Foods> list = new ArrayList<Foods>();
+        Inventory invent = new Inventory();
+        Foods item1 = new Foods(23, "Raisin Bran", 50, 20, 20, 10, 160);
+        Foods item2 = new Foods(56, "Granola Bar", 65, 25, 5, 5, 120);
+        Foods item3 = new Foods(72, "Canned Soup", 20, 50, 25, 5, 240);
+        list.add(item1);
+        list.add(item2);
+        list.add(item3);
+        invent.setInven(list);
+        Foods actual = invent.getItem(1);
+        Foods expected = item2;
+        assertEquals("Inventory did not recieve correct item.", expected, actual);
+    }
+    
+    // tests for Foods
+    // test if constructor sets correct ID
+    @Test
+    public void testGetIDFoods(){
+        Foods food = new Foods(17, "pomegranate", 10, 85, 0, 5, 100);
+        int actual = food.getID();
+        int expected = 17;
+        assertEquals("Did not return correct ID number", expected, actual);
+    }
+
+    // test if constructor sets correct Name
+    @Test
+    public void testGetNameFoods(){
+        Foods food = new Foods(17, "pomegranate", 10, 85, 0, 5, 100);
+        String actual = food.getFoodName();
+        String expected = "pomegranate";
+        assertEquals("Did not return correct food name", expected, actual);
+    }
+
+    // test if constructor sets correct WG content
+    @Test
+    public void testGetWGFoods(){
+        Foods food = new Foods(17, "pomegranate", 10, 85, 0, 5, 100);
+        double actual = food.getGrain();
+        double expected = 10;
+        assertEquals("Did not return correct whole grain content", expected, actual, 0);
+    }    
+
+    // test if constructor sets correct FV content
+    @Test
+    public void testGetFVFoods(){
+        Foods food = new Foods(17, "pomegranate", 10, 85, 0, 5, 100);
+        double actual = food.getFV();
+        double expected = 85;
+        assertEquals("Did not return correct fruits and veg content", expected, actual, 0);
+    }  
+
+    // test if constructor sets correct Pro content
+    @Test
+    public void testGetProFoods(){
+        Foods food = new Foods(17, "pomegranate", 10, 85, 0, 5, 100);
+        double actual = food.getPro();
+        double expected = 0;
+        assertEquals("Did not return correct protein content", expected, actual, 0);
+    }  
+
+    // test if constructor sets correct Other content
+    @Test
+    public void testGetOtherFoods(){
+        Foods food = new Foods(17, "pomegranate", 10, 85, 0, 5, 100);
+        double actual = food.getOther();
+        double expected = 5;
+        assertEquals("Did not return correct other content", expected, actual, 0);
+    }  
+
+    // test if constructor sets correct calories
+    @Test
+    public void testGetCaloriesFoods(){
+        Foods food = new Foods(17, "pomegranate", 10, 85, 0, 5, 100);
+        double actual = food.getCalories();
+        double expected = 100;
+        assertEquals("Did not return correct calories", expected, actual, 0);
+    }
 
 }
