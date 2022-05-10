@@ -326,4 +326,54 @@ public class FoodBankTest {
 
         // can't test makeHamp caus SQL driver
 
+// tests for GUIFoodBank
+        // test setters and getters for children under 8
+    @Test 
+    public void testSetGetUnder8GUI(){
+        int givenData = 4;
+        GUIFoodBank gui = new GUIFoodBank();
+        gui.setUn8(givenData);
+        int actual = gui.getUn8();
+        assertEquals("Family size did not match what was expected", givenData, actual);
+    }
+
+        // test setters and getters for children over 8
+    @Test 
+    public void testSetGetOver8GUI(){
+        int givenData = 2;
+        GUIFoodBank gui = new GUIFoodBank();
+        gui.setOv8(givenData);
+        int actual = gui.getOv8();
+        assertEquals("Family size did not match what was expected", givenData, actual);
+    }
+
+        // test setters and getters for female adults
+    @Test 
+    public void testSetGetAdultFemaleGUI(){
+        int givenData = 1;
+        GUIFoodBank gui = new GUIFoodBank();
+        gui.setAdFem(givenData);
+        int actual = gui.getFemAd();
+        assertEquals("Family size did not match what was expected", givenData, actual);
+    }
+
+        // test setters and getters for male adults
+    @Test 
+    public void testSetGetAdultMaleGUI(){
+        int givenData = 3;
+        GUIFoodBank gui = new GUIFoodBank();
+        gui.setMalAd(givenData);
+        int actual = gui.getMalAd();
+        assertEquals("Family size did not match what was expected", givenData, actual);
+    }
+
+        // test if validateInput catches error and returns false
+    @Test
+    public void testValidateInputFalseGUI(){
+        int incorrectInput = -30;
+        GUIFoodBank gui = new GUIFoodBank();
+        gui.setAdFem(incorrectInput);
+        assertFalse("Method did not catch error and return false.", gui.validateInput());
+    }
+
 }
