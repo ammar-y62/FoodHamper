@@ -29,7 +29,9 @@ Running Program:
 
 Note: You can find the final orderform in the same folder that "edu" and your input 
 file is located. The lines of the UML differ in colour to make it easier to read due to some 
-unavoidable overlapping of lines.
+unavoidable overlapping of lines. The files named "62.pdf" and "Tests.java" are past deliverables. 
+The video demonstration was too large to upload onto GitHub. However, it is included in the D2L 
+submission. 
 
 Samira Khan 30113862 @2022
 Ammar Elzeftawy 30113872 @2022
