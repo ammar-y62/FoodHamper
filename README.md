@@ -1,4 +1,4 @@
-# ENSF409-W22Project
+# Food Hamper Project
 
 This program would be used in food banks to create hampers for families of different sizes 
 with different nutritional needs. The user will input information for their family and is able
@@ -32,6 +32,9 @@ file is located. The lines of the UML differ in colour to make it easier to read
 unavoidable overlapping of lines. The files named "62.pdf" and "Tests.java" are past deliverables. 
 The video demonstration was too large to upload onto GitHub. However, it is included in the D2L 
 submission. 
+
+## Presentation
+https://drive.google.com/file/d/1-5_6OFBIYLn1LeDyI5IzYDgKIxatT1jf/view?usp=sharing
 
 Samira Khan 30113862 @2022
 Ammar Elzeftawy 30113872 @2022
